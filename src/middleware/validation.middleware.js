@@ -3,7 +3,6 @@ export const validateUUID = (name = 'id') => {
     return (req, res, next) => {
         const value = req.params[name]
         const { error } = IdValidation({ id: value })
-        
         if (error) {
             return res.status(400).json({
                 success: false,
@@ -11,5 +10,6 @@ export const validateUUID = (name = 'id') => {
             })
         }
         next()
-}}
+    }
+}
 export default validateUUID

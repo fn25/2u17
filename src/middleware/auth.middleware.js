@@ -4,8 +4,16 @@ import jwt from 'jsonwebtoken'
 const jwt_secret = process.env.JWT_SECRET || "my_secret"
 
 export const authenticateToken = (req, res, next) => {
+    //Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
     const authHeader = req.headers['authorization']
-    const token = authHeader && authHeader.split(' ')[1]
+    let token
+    if (authHeader) {
+        token = authHeader.split(' ')[1]
+    } else {
+        token = undefined
+    }
+
 
     if (!token) {
         return res.status(401).json({

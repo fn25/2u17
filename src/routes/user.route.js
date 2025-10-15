@@ -4,14 +4,14 @@ import { createuser, deleteuser, getIduser, getUserAll, updateuser } from "../co
 
 import { authenticateToken } from "../middleware/auth.middleware.js";
 
-const UserRouter=Router()
+const UserRouter = Router()
 UserRouter.use(authenticateToken)
 
 
-UserRouter.post('/',createuser)
-UserRouter.get('/',getUserAll)
-UserRouter.get('/:id',validateUUID(),getIduser)
-UserRouter.put('/:id',validateUUID(),updateuser)
-UserRouter.delete('/:id',validateUUID(),deleteuser)
+UserRouter.post('/', createuser)
+UserRouter.get('/', getUserAll)
+UserRouter.get('/:id', validateUUID(), getIduser)
+UserRouter.put('/:id', validateUUID(), updateuser)
+UserRouter.delete('/:id', validateUUID(), deleteuser)
 
 export default UserRouter

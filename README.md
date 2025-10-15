@@ -18,12 +18,12 @@ POST /users
   "email": "john@example.com",
   "password": "password123"
 }
-POST /board
+POST /boards
 {
   "title": "My Project",
   "columns": "To Do,In Progress,Done"
 }
-POST /task
+POST /tasks
 {
   "title":"birgalikda",
 "order":345,
